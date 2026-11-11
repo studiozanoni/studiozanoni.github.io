@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de 13º Salário 2026: 1ª e 2ª parcela | fluxo.yz</title>
+<meta name="description" content="Calcule o seu 13º salário de 2026: valor bruto proporcional, 1ª parcela (até 30 de novembro) e 2ª parcela (até 20 de dezembro). Depois, decida para onde vai cada real.">
+<link rel="canonical" href="https://studiozanoni.github.io/fluxo-yz/calculadora-13o-salario/">
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Calculadora de 13º Salário 2026: 1ª e 2ª parcela">
+<meta property="og:description" content="Calcule o 13º, veja as duas parcelas e decida para onde vai cada real antes de o dinheiro chegar.">
+<style>
+:root{--bg:#fbfaf7;--fg:#22262b;--muted:#5d6670;--line:#dfe3e6;--accent:#245b4a;--accent-fg:#fff;--card:#fff;--soft:#eef5f1;--warn:#8a5a00}
+@media (prefers-color-scheme:dark){:root{--bg:#14181a;--fg:#eceff1;--muted:#a9b3ba;--line:#2c3438;--accent:#6fcf9f;--accent-fg:#0b1f16;--card:#1b2124;--soft:#1b2a24;--warn:#e3bf72}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+header a{color:var(--fg);text-decoration:none;font-weight:700}nav a{font-weight:500;color:var(--muted);margin-left:14px;font-size:15px}
+h1{font-size:clamp(1.55rem,4.5vw,2.2rem);line-height:1.2;margin:28px 0 10px}h2{font-size:1.3rem;margin:34px 0 10px}
+p{margin:0 0 12px}.lead{font-size:1.1rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}input,select{width:100%;padding:11px 12px;font:inherit;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px}
+.row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.result{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:14px}
+.res{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.res small{display:block;color:var(--muted)}.res b{font-size:1.35rem}
+.hint{font-size:.92rem;color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.cta{display:inline-block;background:var(--accent);color:var(--accent-fg);padding:14px 24px;border-radius:10px;font-weight:700;text-decoration:none;margin:8px 0}
+.box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:20px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}summary{cursor:pointer;font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:22px 0;color:var(--muted);font-size:14px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quando é pago o 13º salário?","acceptedAnswer":{"@type":"Answer","text":"A 1ª parcela pode ser paga entre fevereiro e 30 de novembro. A 2ª parcela deve ser paga até 20 de dezembro."}},
+{"@type":"Question","name":"Como calcular o 13º proporcional?","acceptedAnswer":{"@type":"Answer","text":"Divide-se o salário por 12 e multiplica-se pelo número de meses trabalhados no ano. Fração igual ou superior a 15 dias conta como mês inteiro."}},
+{"@type":"Question","name":"A 1ª parcela tem desconto?","acceptedAnswer":{"@type":"Answer","text":"Não. A 1ª parcela corresponde a metade do valor bruto, sem descontos de INSS ou imposto de renda. Os descontos incidem na 2ª parcela."}}]}</script>
+</head>
+<body>
+<header><div class="wrap"><a href="../">fluxo.yz</a><nav><a href="../produtos/">Produtos</a></nav></div></header>
+<main class="wrap">
+<h1>Calculadora de 13º salário 2026: 1ª e 2ª parcela</h1>
+<p class="lead">Digite o seu salário e os meses trabalhados em 2026. Você vê o 13º bruto, as duas parcelas e, no fim, pode decidir para onde vai cada real.</p>
+
+<div class="card" id="calc">
+  <div class="row">
+    <div><label for="sal">Salário bruto mensal (R$)</label><input id="sal" inputmode="decimal" placeholder="ex.: 3000,00"></div>
+    <div><label for="mes">Meses trabalhados em 2026</label>
+      <select id="mes"></select></div>
+  </div>
+  <div class="row">
+    <div><label for="var">Média mensal de horas extras e comissões (R$, opcional)</label><input id="var" inputmode="decimal" placeholder="0,00"></div>
+    <div><label for="desc">Descontos da 2ª parcela (INSS e IR, R$, se você já souber)</label><input id="desc" inputmode="decimal" placeholder="0,00"></div>
+  </div>
+  <p class="hint">Fração de mês igual ou superior a 15 dias conta como mês inteiro. Os descontos aparecem no seu holerite; se deixar em branco, a 2ª parcela é mostrada bruta.</p>
+  <div class="result" id="res" aria-live="polite"></div>
+</div>
+
+<h2>Para onde vai o seu 13º?</h2>
+<p>Dê um destino a cada parte antes de o dinheiro chegar. Digite quanto quer separar para cada item:</p>
+<div class="card" id="alloc">
+  <div class="row" id="items"></div>
+  <div class="result" id="allocres" aria-live="polite"></div>
+</div>
+
+<div class="box">
+  <p><strong>Quer fazer isso no papel, com orçamento de Natal, presentes, Black Friday e contas de janeiro?</strong></p>
+  <p>O Kit Fim de Ano Sem Dívidas é um PDF para imprimir, R$ 19,90. Pix, ou cartão parcelado (até 4x, com acréscimo).</p>
+  <a class="cta" href="https://pay.kiwify.com.br/gpDDOzI?utm_source=calculadora&utm_medium=site&utm_campaign=13o-2026&utm_content=resultado">Ver o Kit Fim de Ano · R$ 19,90</a>
+</div>
+
+<h2>Perguntas frequentes</h2>
+<details><summary>Quando é pago o 13º salário?</summary><p>A 1ª parcela pode ser paga entre fevereiro e 30 de novembro. A 2ª parcela deve ser paga até 20 de dezembro.</p></details>
+<details><summary>Como é calculado o 13º proporcional?</summary><p>Divide-se o salário por 12 e multiplica-se pelos meses trabalhados no ano. Fração de 15 dias ou mais conta como mês inteiro.</p></details>
+<details><summary>A 1ª parcela tem desconto?</summary><p>Não. Ela é metade do valor bruto, sem INSS nem imposto de renda. Os descontos entram na 2ª parcela.</p></details>
+<details><summary>Esta calculadora substitui o holerite?</summary><p>Não. Ela mostra valores brutos e usa os descontos que você informar. O valor oficial é o do seu holerite ou do contador.</p></details>
+</main>
+<footer><div class="wrap">Cálculo informativo. Não substitui holerite, contador nem orientação jurídica. Nenhum dado digitado aqui é enviado a lugar nenhum. fluxo.yz</div></footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var fmt=function(v){return v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})};
+var num=function(s){s=(s||'').toString().trim().replace(/[^0-9.,]/g,'');if(s.indexOf(',')>-1){s=s.replace(/\./g,'').replace(',','.')}else if(/^\d{1,3}(\.\d{3})+$/.test(s)){s=s.replace(/\./g,'')}var n=parseFloat(s);return isNaN(n)||n<0?0:n};
+var sel=$('mes');for(var m=12;m>=1;m--){var o=document.createElement('option');o.value=m;o.textContent=m+(m===12?' (ano inteiro)':m===1?' mês':' meses');sel.appendChild(o)}
+function calc(){
+  var base=num($('sal').value)+num($('var').value), meses=parseInt($('mes').value,10);
+  var bruto=base/12*meses, p1=bruto/2, p2b=bruto-p1, d=Math.min(num($('desc').value),p2b), p2l=p2b-d, total=p1+p2l;
+  $('res').innerHTML=base>0?
+    '<div class="res"><small>13º bruto</small><b>'+fmt(bruto)+'</b></div>'+
+    '<div class="res"><small>1ª parcela (até 30/11, sem descontos)</small><b>'+fmt(p1)+'</b></div>'+
+    '<div class="res"><small>2ª parcela (até 20/12)'+(d>0?', após descontos':', bruta')+'</small><b>'+fmt(p2l)+'</b></div>'+
+    '<div class="res"><small>Total a receber</small><b>'+fmt(total)+'</b></div>':
+    '<p class="hint">Digite o salário para ver o resultado.</p>';
+  alloc(total);return total;
+}
+var names=['Dívidas e parcelas atrasadas','Reserva de emergência','Presentes de Natal','Ceia e festas','Contas de janeiro (IPVA, IPTU, material escolar)','Lazer, viagem ou outros'];
+var box=$('items');names.forEach(function(n,i){var d=document.createElement('div');d.innerHTML='<label for="a'+i+'">'+n+' (R$)</label><input id="a'+i+'" inputmode="decimal" placeholder="0,00">';box.appendChild(d)});
+function alloc(total){
+  var used=0;names.forEach(function(n,i){used+=num($('a'+i).value)});
+  var left=total-used;
+  $('allocres').innerHTML='<div class="res"><small>Total a receber</small><b>'+fmt(total)+'</b></div><div class="res"><small>Já destinado</small><b>'+fmt(used)+'</b></div>'+
+    '<div class="res"><small>'+(left<0?'Passou do 13º em':'Ainda sem destino')+'</small><b class="'+(left<0?'warn':'')+'">'+fmt(Math.abs(left))+'</b></div>';
+}
+document.addEventListener('input',function(){var t=calc();});
+calc();
+})();
+</script>
+</body>
+</html>
