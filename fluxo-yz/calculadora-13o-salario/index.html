@@ -140,9 +140,11 @@
       font-weight: 700; font-size: 1.15rem;
       text-decoration: none; color: var(--fg); letter-spacing: 0.02em;
     }
+    nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; justify-content: flex-end; }
+    @media (max-width: 639px) { nav { justify-content: flex-start; } }
     nav a {
       color: var(--muted); text-decoration: none; font-weight: 600;
-      font-size: 0.95rem; margin-left: 1rem;
+      font-size: 0.95rem;
     }
     nav a[aria-current="page"] { color: var(--fg); }
     nav a:hover { color: var(--fg); }
@@ -237,6 +239,7 @@
       <nav aria-label="Principal">
         <a href="../">Início</a>
         <a href="./" aria-current="page">Calculadora do 13º</a>
+        <a href="../calculadora-orcamento-natal/">Orçamento de Natal</a>
         <a href="../ofertas/">Ofertas</a>
       </nav>
     </div>
@@ -343,6 +346,7 @@
       <div class="row" id="alloc-items"></div>
       <div id="allocres" style="margin-top:0.9rem"></div>
       <p style="margin-top:1rem">Quer fazer isso no papel, com orçamento de Natal, lista de presentes, Black Friday e contas de janeiro? O <strong>Kit Fim de Ano Sem Dívidas</strong> é um PDF para imprimir, R$&nbsp;19,90, com Pix ou cartão.</p>
+      <p>Com o líquido estimado, dá para ver se presentes, ceia e as contas de janeiro cabem no mesmo bolo. Abra a <a href="../calculadora-orcamento-natal/">calculadora de orçamento de Natal</a>.</p>
       <div class="cta-actions">
         <a class="btn" href="https://pay.kiwify.com.br/gpDDOzI?utm_source=calculadora&amp;utm_medium=site&amp;utm_campaign=13o-2026&amp;utm_content=resultado">Ver o Kit Fim de Ano · R$ 19,90</a>
         <a class="btn btn-ghost" href="../">Voltar ao início do fluxo.yz</a>
@@ -394,7 +398,7 @@
     <div class="wrap">
       <p>fluxo.yz · Calculadora de 13º salário líquido 2026</p>
       <p>Ferramenta de organização e estimativa. Não constitui aconselhamento financeiro ou contábil.</p>
-      <p>Nenhum dado digitado aqui é enviado a lugar nenhum. <a href="../">Página inicial</a> · <a href="../ofertas/">Ofertas</a></p>
+      <p>Nenhum dado digitado aqui é enviado a lugar nenhum. <a href="../">Página inicial</a> · <a href="../calculadora-orcamento-natal/">Orçamento de Natal</a> · <a href="../ofertas/">Ofertas</a></p>
     </div>
   </footer>
 
