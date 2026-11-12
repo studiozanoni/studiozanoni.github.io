@@ -22,6 +22,13 @@ body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size
 .wrap{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance;letter-spacing:-.01em;line-height:1.12}
 header.top{background:var(--green);color:var(--green-fg);padding-block:44px 52px}
+.hero-nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 22px}
+.hero-nav a{color:var(--fg);font-weight:600;text-decoration:none;font-size:.98rem}
+.hero-nav a:hover{text-decoration:underline}
+.calc-links{list-style:none;padding:0;margin:16px 0 0}
+.calc-links li{margin:0 0 10px}
+.calc-links a{font-weight:700}
+
 .brand{margin-bottom:28px}
 .brand img{width:44px;height:44px;border-radius:50%}
 .brand span{font-family:var(--font-display);font-weight:700;font-size:1.1rem;letter-spacing:.02em}
@@ -57,10 +64,16 @@ a.cta:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-
 
 <header class="top"><div class="wrap">
   <div class="brand"><span>fluxo.yz</span></div>
+  <nav class="hero-nav" aria-label="Principal">
+    <a href="./" aria-current="page">Início</a>
+    <a href="calculadora-13o-salario/">Calculadora do 13º</a>
+    <a href="ofertas/">Ofertas</a>
+  </nav>
   <h1>Agendas e cadernos financeiros para imprimir</h1>
   <p class="lead">Organize o orçamento da casa, o 13º, o Natal e o ano de 2027 no papel, com ou sem fé no centro da rotina. Você compra, baixa o PDF e imprime em casa.</p>
   <a class="cta" href="https://pay.kiwify.com.br/gpDDOzI?utm_source=landing&utm_medium=site&utm_campaign=lp-nov26&utm_content=hero">Ver o Kit Fim de Ano · R$ 19,90</a>
   <div class="meta">Pix ou cartão em até 6x · Arquivo digital em PDF, nenhum item físico é enviado</div>
+  <p class="meta">Quer estimar o 13º líquido de 2026, com INSS e IR? <a href="calculadora-13o-salario/">Abra a calculadora gratuita</a>.</p>
 </div></header>
 
 <main class="wrap">
@@ -175,6 +188,14 @@ a.cta:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-
   <details><summary>Posso pagar com Pix ou parcelado?</summary><p>Sim. O checkout da Kiwify aceita Pix e cartão em até 6x.</p></details>
   <details><summary>Isso é aconselhamento financeiro?</summary><p>Não. É uma ferramenta de organização. Os resultados dependem de como cada pessoa a utiliza.</p></details>
   <details><summary>Posso revender ou compartilhar os arquivos?</summary><p>Não. O uso é pessoal.</p></details>
+</section>
+
+<section>
+  <h2>Calculadora gratuita</h2>
+  <p class="sub">Estime o 13º salário líquido de 2026: 1ª parcela, 2ª parcela, INSS e IRRF das tabelas oficiais.</p>
+  <ul class="calc-links">
+    <li><a href="calculadora-13o-salario/">Calculadora de 13º salário líquido 2026</a></li>
+  </ul>
 </section>
 
 <footer>
