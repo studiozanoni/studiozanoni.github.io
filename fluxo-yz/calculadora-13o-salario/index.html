@@ -347,8 +347,18 @@
       <div id="allocres" style="margin-top:0.9rem"></div>
       <p style="margin-top:1rem">Quer fazer isso no papel, com orçamento de Natal, lista de presentes, Black Friday e contas de janeiro? O <strong>Kit Fim de Ano Sem Dívidas</strong> é um PDF para imprimir, R$&nbsp;19,90, com Pix ou cartão.</p>
       <p>Com o líquido estimado, dá para ver se presentes, ceia e as contas de janeiro cabem no mesmo bolo. Abra a <a href="../calculadora-orcamento-natal/">calculadora de orçamento de Natal</a>.</p>
+      <form id="orcamento-13" style="margin:1.25rem 0;max-width:28rem">
+        <h3>Quanto sobra para dezembro?</h3>
+        <p>Use o valor líquido que entrou na conta. Preencha os valores em reais.</p>
+        <label>13º líquido recebido <input name="recebido" type="number" min="0" step="0.01" required inputmode="decimal"></label>
+        <label>Contas já assumidas <input name="contas" type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <label>Contas de janeiro <input name="janeiro" type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <label>Reserva <input name="reserva" type="number" min="0" step="0.01" inputmode="decimal"></label>
+        <button type="submit" class="btn">Ver quanto sobra</button>
+        <p><output name="saldo" aria-live="polite"></output></p>
+      </form>
       <div class="cta-actions">
-        <a class="btn" href="https://pay.kiwify.com.br/gpDDOzI?utm_source=calculadora&amp;utm_medium=site&amp;utm_campaign=13o-2026&amp;utm_content=resultado">Ver o Kit Fim de Ano · R$ 19,90</a>
+        <a class="btn" id="checkout-dezembro" href="https://pay.kiwify.com.br/gpDDOzI?utm_source=calculadora&amp;utm_medium=site&amp;utm_campaign=13o-2026&amp;utm_content=resultado">Ver o Kit de Dezembro</a>
         <a class="btn btn-ghost" href="../">Voltar ao início do fluxo.yz</a>
       </div>
     </section>
@@ -664,5 +674,26 @@ function calcular13(salario, meses, extras, dependentes, pensao) {
     atualizarAlocacao();
   })();
   </script>
+<script>
+  const budget = document.getElementById('orcamento-13');
+  const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  budget.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const fields = new FormData(budget);
+    const cents = (key) => Math.round(Number(fields.get(key) || 0) * 100);
+    const total = cents('recebido') - cents('contas') - cents('janeiro') - cents('reserva');
+    budget.elements.saldo.value = total < 0
+      ? 'Faltam ' + brl.format(-total / 100) + ' para cobrir o que você separou.'
+      : 'Sobram ' + brl.format(total / 100) + ' para dezembro.';
+  });
+  const checkout = document.getElementById('checkout-dezembro');
+  const source = new URLSearchParams(location.search);
+  const destination = new URL(checkout.href);
+  for (const key of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content']) {
+    const value = source.get(key);
+    if (value && /^[a-z0-9_-]{1,70}$/i.test(value)) destination.searchParams.set(key, value);
+  }
+  checkout.href = destination.href;
+</script>
 </body>
 </html>
